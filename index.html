@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Shop</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .hero {
+            background-image: url('https://i.pinimg.com/564x/95/e6/aa/95e6aaa26b1d4ee54d60d5dab22a5c64.jpg');
+            background-size: cover;
+            background-position: center;
+            color: #daf037;
+            height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .btn-primary {
+            margin-bottom: 30px;
+        }
+
+        .menu-item {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .menu-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .menu-price {
+            font-size: 1.2rem;
+            color: #1a4300;
+        }
+
+        .navbar-brand,
+        .nav-link {
+            color: #daf037 !important;
+        }
+
+        .navbar {
+            background: rgb(119, 141, 97);
+        }
+        .display-4{
+            color: whitesmoke;
+            font-weight: bold;
+           
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand m-3" href="#">Coffee Shop</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#menu">Menu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="container">
+            <h1 class="display-4">Welcome to Our Coffee Shop</h1>
+            <p class="lead">The best coffee in town, brewed fresh daily.</p>
+        </div>
+    </div>
+
+    <!-- Menu Section -->
+    <section id="menu" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Our Menu</h2>
+            <div class="row">
+                <div class="col-md-4 menu-item">
+                    <img src="https://i.pinimg.com/236x/ef/b2/2c/efb22cbcfab1410b503ddcdcede78589.jpg" alt="Espresso">
+                    <h4>Espresso</h4>
+                    <p class="menu-price">$2.50</p>
+                </div>
+                <div class="col-md-4 menu-item">
+                    <img src="https://i.pinimg.com/236x/d6/f2/e9/d6f2e9113aa8f9aef8b59a8e28bd7255.jpg" alt="Americano">
+                    <h4>Americano</h4>
+                    <p class="menu-price">$3.00</p>
+                </div>
+                <div class="col-md-4 menu-item">
+                    <img src="https://i.pinimg.com/236x/17/58/ca/1758caed7b4a3b4deadf2582481c1a42.jpg" alt="Cappuccino">
+                    <h4>Cappuccino</h4>
+                    <p class="menu-price">$3.50</p>
+                </div>
+                <div class="col-md-4 menu-item">
+                    <img src="https://i.pinimg.com/236x/86/50/a2/8650a2e29ec10a92a53af08f6928ec4a.jpg" alt="Latte">
+                    <h4>Latte</h4>
+                    <p class="menu-price">$4.00</p>
+                </div>
+                <div class="col-md-4 menu-item">
+                    <img src="https://i.pinimg.com/236x/22/8b/72/228b72a03cb98c19063193cf0188a6a3.jpg" alt="Mocha">
+                    <h4>Mocha</h4>
+                    <p class="menu-price">$4.50</p>
+                </div>
+                <div class="col-md-4 menu-item">
+                    <img src="https://i.pinimg.com/236x/cc/8d/c6/cc8dc6b0ad0437739bfcfe5b737921f0.jpg" alt="Hot Chocolate">
+                    <h4>Hot Chocolate</h4>
+                    <p class="menu-price">$3.00</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4">Contact Us</h2>
+            <form>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" placeholder="Enter your name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea class="form-control" id="message" rows="4" placeholder="Enter your message"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
