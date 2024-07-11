@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: rgb(255, 255, 255);
+            margin: 0;
+        }
+        .calculator {
+            background-color: #f0f0f0;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            width: 400px;
+        }
+        .calculator .cal {
+            color: blue;
+            font-size: 40px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .calculator input[type="text"] {
+            width: 95%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+        .buttons, .generate {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        .buttons .btn, .generate .btn {
+            flex: 1;
+            padding: 10px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .buttons .btn:hover, .generate .btn:hover {
+            background-color: #0056b3;
+        }
+        .buttons .btn.selected {
+            background-color: #0056b3;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        .answer {
+            font-size: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <div class="cal">Calculator</div>
+        <input type="text" id="operandA" placeholder="first number">
+        <input type="text" id="operandB" placeholder="second number">
+        <div class="buttons">
+            <button class="btn" onclick="selectOperator(this, '+')">+</button>
+            <button class="btn" onclick="selectOperator(this, '-')">-</button>
+            <button class="btn" onclick="selectOperator(this, '*')">*</button>
+            <button class="btn" onclick="selectOperator(this, '/')">/</button>
+        </div>
+        <div class="generate">
+            <button class="btn" onclick="calculateResult()">Generate</button>
+        </div>
+        <div class="answer" id="answer">Answer:</div>
+    </div>
+
+    <script>
+        let operation = '';
+        let selectedButton = null;
+
+        function selectOperator(button, op) {
+            operation = op;
+            if (selectedButton) {
+                selectedButton.classList.remove('selected');
+            }
+            selectedButton = button;
+            selectedButton.classList.add('selected');
+        }
+
+        function calculateResult() {
+            const operandA = parseFloat(document.getElementById('operandA').value);
+            const operandB = parseFloat(document.getElementById('operandB').value);
+            let result = 0;
+
+            if (isNaN(operandA) || isNaN(operandB)) {
+                alert('Please enter valid numbers in both fields.');
+                return;
+            }
+
+            switch (operation) {
+                case '+':
+                    result = operandA + operandB;
+                    break;
+                case '-':
+                    result = operandA - operandB;
+                    break;
+                case '*':
+                    result = operandA * operandB;
+                    break;
+                case '/':
+                    result = operandA / operandB;
+                    break;
+                default:
+                    alert('Please select an operation.');
+                    return;
+            }
+
+            document.getElementById('answer').innerText = 'Answer: ' + result;
+        }
+    </script>
+</body>
+</html>
